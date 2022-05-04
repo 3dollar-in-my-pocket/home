@@ -22,6 +22,15 @@ const NavigationStyled = styled.div`
     align-items: center;
     font-size: 1.4rem;
     line-height: 1.7;
+
+    .left {
+      display: flex;
+      align-items: center;
+
+      #kakaostory-follow-button {
+        height: 20px;
+      }
+    }
   }
 
   a {

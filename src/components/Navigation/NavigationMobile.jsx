@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { NavigationMobileStyled } from "./Navigation.styles";
@@ -21,6 +21,12 @@ const NavigationMobile = () => {
       <Link to="/">
         <Logo />
       </Link>
+      <div
+        id="kakaostory-follow-button"
+        data-id="3dollar"
+        data-show-follower-count="false"
+        data-type="horizontal"
+      ></div>
       <Menu
         isOpen={menuOpen}
         onStateChange={handleMenuState}

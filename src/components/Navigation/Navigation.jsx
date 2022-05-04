@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import NavigationStyled from "./Navigation.styles";
 import { ReactComponent as Logo } from "../../assets/images/img_logo.svg";
@@ -8,9 +7,17 @@ const Navigation = () => {
   return (
     <NavigationStyled className="nav_container">
       <div className="nav_content">
-        <Link to="/">
-          <Logo />
-        </Link>
+        <div className="left">
+          <Link to="/">
+            <Logo />
+          </Link>
+          <div
+            id="kakaostory-follow-button"
+            data-id="3dollar"
+            data-show-follower-count="false"
+            data-type="horizontal"
+          ></div>
+        </div>
         <ul>
           <li>
             <NavLink to="/news" activeclassname="active">

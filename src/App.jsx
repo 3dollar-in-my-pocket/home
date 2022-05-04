@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import Main from "./pages/Main";
@@ -13,6 +14,23 @@ import NavigationMobile from "./components/Navigation/NavigationMobile";
 
 function App() {
   const isMobile = useMediaQuery({ query: "(max-width: 479px)" });
+  useEffect(() => {
+    window.kakaoAsyncInit = function () {
+      window.Kakao.Story.createFollowButton({
+        container: "#kakaostory-follow-button",
+      });
+    };
+
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://developers.kakao.com/sdk/js/kakao.story.min.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "kakao-js-sdk");
+  }, [isMobile]);
 
   return (
     <ResponsiveStyled className="App">
